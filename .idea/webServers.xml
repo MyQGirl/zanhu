@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="31ba60d3-4041-4bce-ab80-635c224464a5" name="zanhu" url="http://120.25.2.241">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="120.25.2.241" port="22" sshConfigId="8d1e78d1-0895-4ec8-b139-192ddcafc273" sshConfig="root@120.25.2.241:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="10000" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
