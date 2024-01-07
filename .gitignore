@@ -329,3 +329,5 @@ dump.rdb
 zanhu/media/
 
 .pytest_cache/
+
+.env

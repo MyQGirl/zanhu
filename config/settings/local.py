@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="mCR8sCX5uOY8XSsvpL6WDZc5Jtab9V4H3lLIRonlHXjwJdbtLlSjKiRT4un7gFVO",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]  # 表示允许任意地址访问
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -23,10 +23,10 @@ CACHES = {
     }
 }
 
-# EMAIL
+# EMAIL 这部分邮件配置采用base.py中的配置
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env("DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend")
+# EMAIL_BACKEND = env("DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend")
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
