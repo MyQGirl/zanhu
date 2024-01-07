@@ -331,3 +331,4 @@ zanhu/media/
 .pytest_cache/
 
 .env
+.idea
