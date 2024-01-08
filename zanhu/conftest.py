@@ -1,6 +1,7 @@
 import pytest
+from django.conf import settings
+from django.test import RequestFactory
 
-from zanhu.users.models import User
 from zanhu.users.tests.factories import UserFactory
 
 
@@ -10,5 +11,10 @@ def media_storage(settings, tmpdir):
 
 
 @pytest.fixture
-def user(db) -> User:
+def user() -> settings.AUTH_USER_MODEL:
     return UserFactory()
+
+
+@pytest.fixture
+def request_factory() -> RequestFactory:
+    return RequestFactory()
