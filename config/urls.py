@@ -4,16 +4,13 @@ from django.conf.urls.static import static
 
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-
+# 0.0.0.0:8000/
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
-
-    # User management
+    # User management 用户管理
     path("users/", include("zanhu.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+
+
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
