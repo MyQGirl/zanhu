@@ -13,6 +13,11 @@ a Q&A Website
 
 Settings
 --------
+python_version = 3.7
+Cookiecutter==1.7.0
+cookiecutter-django==2.2.7
+其他安装依赖参照 requirements.txt
+
 
 Moved to settings_.
 
