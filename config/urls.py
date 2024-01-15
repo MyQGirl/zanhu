@@ -4,15 +4,21 @@ from django.conf.urls.static import static
 
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+
+from news.views import NewsListView
+
 # 0.0.0.0:8000/
 urlpatterns = [
-    # User management 用户管理
-    path("users/", include("zanhu.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
+                  # 首页
+                  path("", NewsListView.as_view, name="home"),
+                  # User management 用户管理
+                  path("users/", include("zanhu.users.urls", namespace="users")),
+                  #  动态
+                  path("news/", include("zanhu.news.urls", namespace="news")),
+                  path("accounts/", include("allauth.urls")),
 
-
-    # Your stuff: custom urls includes go here
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  # Your stuff: custom urls includes go here
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

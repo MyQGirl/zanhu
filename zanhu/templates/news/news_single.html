@@ -1,4 +1,4 @@
-{% load static thumbnail %}
+{% load static thumbnail humanize %}
 
 <li class="infinite-item card" news-id="{{ news.uuid_id }}">
     <div class="card-body">
@@ -13,7 +13,8 @@
         <div class="post">
             <!--自己发送的动态显示删除按钮-->
             {% if request.user.username == news.user.username %}
-                <a href="{% url 'news:delete_news' news.pk %}">
+              <a href="#">
+{#                <a href="{% url 'news:delete_news' news.pk %}">#}
                     <i class="fa fa-times pull-right" aria-hidden="true" title="点击删除这条动态"></i>
                 </a>
             {% endif %}
@@ -25,7 +26,7 @@
             <p>{{ news }}</p>
         </div>
     </div>
-    <div class="interaction" id="interaction">
+    <div class="interaction" id="interaction">{# 判断有没有点赞，展示空心还是实心 #}
         <a href="#" class="like" title="{% for i in news.get_likers %}{{ i }}&#10;{% endfor %}">
             {% if request.user in news.get_likers %}
                 <i class="heart fa fa-heart" aria-hidden="true"></i>
@@ -36,7 +37,7 @@
         </a>
         <a href="#" class="comment"><i class="fa fa-comment-o" aria-hidden="true"></i>
             <span class="comment-count">{{ news.comment_count }}</span>
-        </a>
+        </a>                      {# 展示评论发表的时间 #}
         <span class="timestamp">{{ news.created_at|timesince }}之前</span>
     </div>
 </li>

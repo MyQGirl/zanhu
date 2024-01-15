@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static thumbnail %}
+{% load static thumbnail humanize %}
 {% block title %}首页 - {{ block.super }}{% endblock %}
 
 {% block css %}
@@ -14,8 +14,8 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsFormModal">
                     <i class="fa fa-share-alt" aria-hidden="true"></i> 发表动态
                 </button>
-                {% include 'news/news_form_modal.html' %}
-                {% include 'news/news_thread_modal.html' %}
+                {% include 'news/news_form_modal.html' %}  {#  发表动态时，弹出的框#}
+                {% include 'news/news_thread_modal.html' %} {% comment %}发表评论时，弹出的框{% endcomment %}
                 <div class="mb-2"></div>
 
                 <!-- 有新的状态时 -->
